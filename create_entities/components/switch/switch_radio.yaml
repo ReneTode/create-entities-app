@@ -1,6 +1,5 @@
 switch_radio:
   module: switch_radio
   class: switch_radio
-  alexa_media_file: /home/renetode/alexamedia.shl
   priority: 1
   plugin: NONE
