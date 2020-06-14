@@ -1,0 +1,5 @@
+input_boolean_:
+  module: input_boolean_
+  class: input_boolean_
+  priority: 1
+  plugin: NONE

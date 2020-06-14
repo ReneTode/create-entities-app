@@ -1,0 +1,5 @@
+switch_foscam_ir:
+  module: switch_foscam_ir
+  class: switch_foscam_ir
+  priority: 1
+  plugin: NONE

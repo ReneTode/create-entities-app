@@ -1,0 +1,5 @@
+switch_mysensors:
+  module: switch_mysensors
+  class: switch_mysensors
+  priority: 1
+  plugin: NONE

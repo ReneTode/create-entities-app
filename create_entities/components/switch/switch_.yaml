@@ -1,0 +1,5 @@
+switch_:
+  module: switch_
+  class: switch_
+  priority: 1
+  plugin: NONE

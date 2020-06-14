@@ -1,0 +1,5 @@
+input_number_:
+  module: input_number_
+  class: input_number_
+  priority: 1
+  plugin: NONE

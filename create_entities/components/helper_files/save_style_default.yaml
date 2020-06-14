@@ -1,0 +1,6 @@
+save_style_default:
+  module: save_style_default
+  class: save_style_default
+  logfiledirname: /
+  priority: 1
+  plugin: NONE

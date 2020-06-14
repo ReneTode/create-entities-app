@@ -1,0 +1,140 @@
+#
+# there are 2 ways you can make an app that creates entities:
+# 1) use 1 app for each entity (this can be a preffered way if you have an entity that is heavy used)
+# 2) use 1 app for all entities that belong to a ceratin platform
+# and of course you can use any kind of combination.
+#
+# below are examples for type 2 apps and 1 for a single entity type.
+#
+# priority is set to 2 because the other parts from the entity creation are loaded before this
+#
+# initial will default to "off" when not set and when not retrieved from saved state
+#
+# state_save_type uses the app that is placed in the helper_files directory
+# if you want the entities to pickup their last state, you need to create an app that saves the state
+# and then in the save_style app you need to provide the way to retrieve the state
+# the last saved state overrides the initial state value
+#
+# platform is the same as on home assistant, only platforms can be used that have a component file (see components dir)
+#
+# in attributes you can provide every valid attribute for that type of entity 
+# (see the homeassistant components page what you can use) https://www.home-assistant.io/components/
+#
+
+create_1_entity:
+  class: create_entities
+  module: create_entities
+  priority: 2
+  state_save_type: default
+  platform: input_boolean
+  name: test1
+  initial: "off"
+  attributes:
+    friendly_name: some test boolean
+
+create_input_booleans:
+  class: create_entities
+  module: create_entities
+  priority: 2
+  state_save_type: default
+  entity_settings:
+    platform: input_boolean
+    entities:
+      test1:
+        initial: "off"
+      test2:
+        initial: "on"
+        attributes:
+          friendly_name: some test boolean
+
+create_input_numbers:
+  class: create_entities
+  module: create_entities
+  priority: 2
+  state_save_type: default
+  entity_settings:
+    platform: input_number
+    entities:
+      test1:
+        initial: 50
+        attributes:
+          min: 0
+          max: 100
+          step: 10
+          mode: slider #can also be box
+          friendly_name: some test slider
+      test2:
+        component_type: alexa_volume
+        initial: 50
+        attributes:
+          min: 0
+          max: 100
+          step: 10
+          mode: slider
+          friendly_name: an Alexa volume slider
+          device_name: name_from_the_alexa_device   
+
+create_input_texts:
+  class: create_entities
+  module: create_entities
+  priority: 2
+  state_save_type: default
+  entity_settings:
+    platform: input_text
+    entities:
+      test1:
+        initial: ""
+        attributes:
+          friendly_name: some input text
+      test2:
+        component_type: alexa
+        initial: ""
+        attributes:
+          friendly_name: Speak on alexa device
+          device_name: name_from_the_alexa_device
+
+create_internal_sensors:
+  module: create_entities
+  class: create_entities
+  priority: 2
+  state_save_type: default
+  entity_settings:
+    platform: sensor
+    entities:
+      test1: 
+        initial: something
+        attributes:
+          friendly_name: anything
+
+create_switches:
+  class: create_entities
+  module: create_entities
+  priority: 2
+  state_save_type: default
+  entity_settings:
+    platform: switch
+    entities:
+      test1:
+        initial: "off"
+        attributes:
+          friendly_name: something
+          icon: mdi:lightbulb-outline
+          assumed_state: True
+      test2:
+        component_type: mysensors
+        initial: "off"
+        attributes:
+          friendly_name: something
+          icon: mdi:lightbulb-outline
+          433_switch: switch.some_mysensor_433_switch
+          on_code: 262165
+          off_code: 262164
+          assumed_state: True
+      radio_test:
+        component_type: radio
+        initial: "off"
+        attributes:
+          friendly_name: Radio
+          icon: mdi:music
+          device_name: name_from_the_alexa_device
+          assumed_state: True

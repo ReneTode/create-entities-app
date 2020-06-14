@@ -1,0 +1,5 @@
+my_call_service_event:
+  module: my_call_service_event
+  class: my_call_service_event
+  priority: 1
+  plugin: NONE

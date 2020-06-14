@@ -1,0 +1,5 @@
+input_text_:
+  module: input_text_
+  class: input_text_
+  priority: 1
+  plugin: NONE
