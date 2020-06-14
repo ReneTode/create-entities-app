@@ -20,13 +20,10 @@ at this moment this app can create several entity types:
 - sensor
 - default input_boolean
 - default input_text
-- alexa TTS input_text (uses the alexa_remote_shl from Alexander Noack https://blog.loetzimmer.de/2017/10/amazon-alexa-hort-auf-die-shell-echo.html)
 - default input_number
-- alexa volume input_number (uses the alexa_remote_shl from Alexander Noack)
 - default switch
-- alexa radio switch (uses the alexa_remote_shl from Alexander Noack)
-- mysensors 433 switch (needs mysensors setup in home assistant and a 433 sender connected)
 
+and i added a few switch types that show how to create your own personal switches.
 
 ## Installation
 
@@ -81,9 +78,8 @@ greetz
 
 Rene Tode
 
-for support, ask me in the appdaemon section on the home assistant forum: https://community.home-assistant.io/c/third-party/appdaemon
-or ask me on discord in our appdaemon section https://discord.gg/pHsjADY
+for support ask me on discord in our appdaemon section https://discord.gg/pHsjADY
 
-(and please feel free to share and adapt this code, but keep this read.me file included so that i can get some credit)
+(and please feel free to share and adapt this code, but keep this readme.md file included so that i can get some credit)
 
  
